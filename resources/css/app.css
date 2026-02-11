@@ -1,0 +1,49 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans:
+        "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+
+    --color-xlight: #f4f4f4;
+    --color-light: #eadca6;
+    --color-medium: #e2c275;
+    --color-dark: #c36a2d;
+    --color-xdark: #562f00;
+}
+
+
+li {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: width 0.5s;
+    width: 4rem; /* Start with a small width */
+    overflow: hidden;
+}
+
+li:after {
+    font-size: x-large;
+    content: attr(data-text);
+    position: absolute;
+    opacity: 0;
+    top: 14px;
+    right: 0;
+    transition: 0.5s;
+}
+
+li:hover {
+    width: 10rem;
+}
+
+li:hover:after {
+    opacity: 1;
+    right: 20px;
+}
