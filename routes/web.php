@@ -8,3 +8,4 @@ Route::get('/', function () {
 
 Route::view('/post','post');
 Route::view('/challenge','challenge');
+Route::view('/settings','settings');
