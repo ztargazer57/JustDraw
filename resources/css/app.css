@@ -7,10 +7,8 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans:
-        "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
-        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-        "Noto Color Emoji";
+    --font-sans:  sans-serif;
+;
 
     --color-xlight: #f4f4f4;
     --color-light: #eadca6;
@@ -19,31 +17,55 @@
     --color-xdark: #562f00;
 }
 
-
-li {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: width 0.5s;
-    width: 4rem; /* Start with a small width */
-    overflow: hidden;
+/* Make images responsive */
+img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-li:after {
-    font-size: x-large;
-    content: attr(data-text);
-    position: absolute;
-    opacity: 0;
-    top: 14px;
-    right: 0;
-    transition: 0.5s;
+/* Make cards responsive */
+.card {
+    transition: transform 0.3s ease;
 }
 
-li:hover {
-    width: 10rem;
+.card:hover {
+    transform: scale(1.02);
 }
 
-li:hover:after {
-    opacity: 1;
-    right: 20px;
+.masonry-grid {
+    width: 100%;
+}
+
+.grid-sizer,
+.masonry-grid .card {
+    width: 20%; /* 5 columns */
+}
+
+@media (max-width: 1280px) {
+    .grid-sizer,
+    .masonry-grid .card {
+        width: 20%; /* 5 columns */
+    }
+}
+
+@media (max-width: 1024px) {
+    .grid-sizer,
+    .masonry-grid .card {
+        width: 33.33%; /* 3 columns */
+    }
+}
+
+@media (max-width: 640px) {
+    .grid-sizer,
+    .masonry-grid .card {
+        width: 50%; /* 2 columns */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-sizer,
+    .masonry-grid .card {
+        width: 100%; /* 1 column */
+    }
 }
