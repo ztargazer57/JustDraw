@@ -9,13 +9,13 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
+<body class="bg-jdbase h-full w-fit overflow-x-hidden">
 
-    <div class="flex h-screen">
+    <div class="flex h-full">
         <div class="flex ">
             <!-- SideBar -->
             <div class="">
-                <ul class="menu bg-base-200 rounded-box gap-5 h-screen fixed ">
+                <ul class="menu bg-jdbrown gap-5 h-screen fixed ">
                     <div class="h-fit w-full text-3xl mb-2">JD</div>
                     <li>
                         <a href="/" class="tooltip tooltip-right" data-tip="Home">
@@ -70,10 +70,10 @@
                 </ul>
             </div>
             <!-- NavBar -->
-            <div class="mt-3 -ml-3">
-                <div class="h-fit w-screen shadow-sm flex">
-                    <div class="flex gap-100 ml-auto">
-                        <label class="input w-130">
+            <div>
+                <div class="bg-jdwhite h-fit py-2 px-5 w-screen shadow-sm flex">
+                    <div class=" flex gap-100 ml-auto">
+                        <label class="bg-jdchocomilk input w-130 rounded-3xl">
                             <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none"
                                     stroke="currentColor">
@@ -91,11 +91,10 @@
                                 </div>
                             </div>
                             <ul tabindex="-1"
-                                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                                class="menu menu-sm dropdown-content bg-jdchocomilk rounded-box z-1 mt-3 w-52 p-2 shadow">
                                 <li>
                                     <a class="justify-between">
                                         Profile
-                                        <span class="badge">New</span>
                                     </a>
                                 </li>
                                 <li><a>Settings</a></li>
@@ -104,7 +103,7 @@
                         </div>
                     </div>
                 </div>
-                <main class="h-fit w-9/10 ml-auto mt-5 p-5">
+                <main class="h-fit w-9/10 m-auto p-5">
                     {{ $slot }}
                 </main>
 </body>

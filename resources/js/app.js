@@ -1,33 +1,32 @@
-
 document.addEventListener("DOMContentLoaded", function () {
-    var grid = document.querySelector('.masonry-grid');
+    var grid = document.querySelector(".masonry-grid");
 
     var msnry = new Masonry(grid, {
-        itemSelector: '.card',
-        columnWidth: '.grid-sizer',
+        itemSelector: ".card",
+        columnWidth: ".grid-sizer",
         percentPosition: true,
-        gutter: 16
+        gutter: 16,
     });
 
-    imagesLoaded(grid).on('progress', function () {
+    imagesLoaded(grid).on("progress", function () {
         msnry.layout();
     });
 });
-import Masonry from 'masonry-layout';
-import imagesLoaded from 'imagesloaded';
+import Masonry from "masonry-layout";
+import imagesLoaded from "imagesloaded";
 
 window.addEventListener("load", function () {
-    const grid = document.querySelector('.masonry-grid');
+    const grid = document.querySelector(".masonry-grid");
     if (!grid) return;
 
     const msnry = new Masonry(grid, {
-        itemSelector: '.card',
-        columnWidth: '.grid-sizer',
+        itemSelector: ".card",
         percentPosition: true,
-        gutter: 16
+        gutter: 16,
+        fitWidth: true,
     });
 
-    imagesLoaded(grid).on('progress', function () {
+    imagesLoaded(grid).on("progress", function () {
         msnry.layout();
     });
 });
